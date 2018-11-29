@@ -32,29 +32,29 @@ Created on Thu Nov 29 13:54:55 2018
 #
 #print ("{}, I like your sense of style, {}.".format(socks,name))
 
-#def hello_world():
-#    print ("Hello World!")
-#    
-#hello_world()
-#
-#def my_name():
-#    print ("Rachel Winkler")
-#    print (2+2)
-#    
-#my_name()
-#
+def hello_world():
+    print ("Hello World!")
+    
+hello_world()
+
+def my_name():
+    print ("Rachel Winkler")
+    print (2+2)
+    
+my_name()
+
 def write_name():
     print ("What is your name?")
     name = input().title()
     print ("Your name is {}".format(name))
     
 write_name()
-#
-#def hello_world():
-#    print ("Hello World!")
-#    write_name()
+
+def hello_world():
+    print ("Hello World!")
+    write_name()
     
-#hello_world()
+hello_world()
 
 def adding_numbers():
     print ("Choose a number")
@@ -62,7 +62,7 @@ def adding_numbers():
     print ("Choose a second number")
     number_two = input()
     result = float(number_one)+float(number_two)
-    print ("The sum of the numbers you choose is {}.".format(result))
+    print ("The sum of the numbers you chose is {}.".format(result))
     
 adding_numbers()
 
