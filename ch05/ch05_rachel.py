@@ -4,6 +4,7 @@ Created on Wed Dec  5 10:08:33 2018
 
 @author: 612383461
 """
+import sys
 
 #Task One
 
@@ -121,10 +122,10 @@ class Horse(FarmAnimal):
     def whinny(self):
         print('neigh')
         
-skye = Dog('Skye', 2, 0)
+#skye = Dog('Skye', 2, 0)
 #skye.bark()
 #skye.eat()
-#skye_do_trick()
+#skye.do_trick()
 
 spider = Cat('Spider', 10)
 #spider.meow()
@@ -157,7 +158,7 @@ class DessertCook(CookRobot):
 #Task Association: Composition
         
 class SuperRobot():
-    def __init__(self, name):
+    def __init__(self, name, age):
         self.name = name
         #This class contains 3 objects
         self.o1 = Robot()
@@ -173,7 +174,12 @@ class SuperRobot():
         return self.o2.do_trick() #using dog class method
     def clean(self):
         return self.o3.clean() #using cleanrobot method
+    
+name = sys.argv[1]
+age = sys.argv[2]
+print(name)
+print(age)
 
-machineDog = SuperRobot('Robo Dog')
-#machineDog.move()
-#machineDog.bark()
+machineDog = SuperRobot(name, age)
+machineDog.move()
+machineDog.bark()
