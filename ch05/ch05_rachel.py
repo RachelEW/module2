@@ -6,7 +6,9 @@ Created on Wed Dec  5 10:08:33 2018
 """
 import sys
 
-#Task One
+########################
+"""Task One: Classes"""
+########################
 
 #class Customer(object):
 #    """A customer of ABC Bank with a checking account. Customers have the following properties:
@@ -48,8 +50,9 @@ import sys
 #sarah.deposit(25)
 #sarah.deposit(1000)
 
-
-#Task Two: Inheritance
+############################
+"""Task Two: Inheritance"""
+############################
 
 class Animal(object):
     def __init__(self, name, age=0):
@@ -132,7 +135,9 @@ spider = Cat('Spider', 10)
 #spider.eat()
 #spider_jump_on_human()
 
-#Task Two: Second Example
+################################
+"""Task Two: Second Example"""
+################################
 
 class Robot():
     def __init__(self, name='robot', speciality='none', age=0):
@@ -154,8 +159,10 @@ class CookRobot(Robot):
 class DessertCook(CookRobot):
     def bake(self):
         print('I baked cookies')
-        
-#Task Association: Composition
+
+######################################       
+"""Task Association: Composition"""
+######################################
         
 class SuperRobot():
     def __init__(self, name, age):
