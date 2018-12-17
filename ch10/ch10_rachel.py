@@ -100,9 +100,11 @@ print(sort_by_share_price)
 reverse_name = sorted(metals.items(), key=lambda kv:kv[0], reverse=True)
 print(reverse_name)
 
-#srt using sort()
+#sort using sort()
 
 metals_keys = list(metals.keys())
 metals_keys.sort(key=lambda k:metals[k])
 print(metals_keys)
 
+top_share_price = sorted(metals.items(), key=lambda kv:kv[1][1])[0] #the final[0] splits the list and means that only the first result will be listed
+print(top_share_price)
