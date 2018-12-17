@@ -97,9 +97,9 @@ b = (0,1,2,3,4,5,6,7,8,9) #Tuple
 #b[0] = 50 #Tuple deos not support this
 #b.append('z') #cannot use append on a Tuple
 
-#############
+##############
 """Lambada"""
-#############
+##############
 
 #use lambda functions when we require a nameless function for a short period of time.
 
