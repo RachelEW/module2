@@ -9,15 +9,18 @@ Created on Mon Dec 17 10:16:48 2018
 """Creating a Dictionary with User Input"""
 #############################################
 
-def addKey_phoneBookDict():
+def addKey_phoneBook_dict():
     name_key = input("What name would you like to add to the phone book? ")
     return name_key
         
 def addItem_phoneBook_dict():
+    QueensAge = 92
     phoneNo = input("What are the last three digits of their phone number? ")
     luckyNo = input("What is their lucky number? ")
     city = input("Which city are they from? ")
-    values = (phoneNo, luckyNo, city)
+    age = input("What is their age? ")
+    diffQueenAge = QueensAge - int(age)
+    values = [phoneNo, luckyNo, city, age, diffQueenAge]
     return values
     
 def continue_phoneBook_dict():
@@ -28,7 +31,7 @@ def continue_phoneBook_dict():
         print("Ok, your phone book is finished. Here is your finished phone book:")
         
 def generate_phoneBook_dict(phoneBook_dict):
-    name_key = addKey_phoneBookDict()
+    name_key = addKey_phoneBook_dict()
     values = addItem_phoneBook_dict()
     phoneBook_dict[name_key] = values
     continue_phoneBook_dict()
@@ -77,9 +80,30 @@ def sortThreeWays():
 sortThreeWays()
 
 #########################################################
-"""Challenge B: Add two more items to the values list"""
+"""Challenge B"""
 #########################################################
-#
+
+####Difference in Age from Queen's Age####
+
+#def compare_QueensAge(phoneBook_dict):
+#    QueensAge = 92
+#    
+#    valuesList = list(phoneBook_dict.values())
+#    print(valuesList)
+#    
+#    ages = agesList[0][3]
+#    print(ages)
+#    ageList = sorted(phoneBook_dict.items(), key=lambda kv:kv[1][3])
+#    print(ageList)
+#    print(phoneBook_dict.get(name_key[3]))
+#    
+
+####Writing the final Dictionary to a file####
+
+f = open('phonebook.txt','w')
+f.write(str(phoneBook_dict))
+f.close()
+##
 #def makingListKeys():
 #    names = list(phoneBook_dict.keys())
 #    return names  
