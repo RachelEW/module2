@@ -7,6 +7,10 @@ Created on Tue Dec 18 13:36:16 2018
 
 from random import randint
 
+#############################
+"""Dice Guessing Game"""
+#############################
+
 def playGame():
     print("""Welcome to The Dice Game.
 I will roll two dice and add the numbers together.
@@ -26,7 +30,7 @@ If you ever want to end the game just write 'quit'.""")
             print("\nYou have choosen to exit the game.")
             break
         else:
-            print("\nIncorrect, the sum of the numbers I rolled was",number,"and your guess was",guess,". Better luck next time!")
+            print("\nIncorrect, the sum of the numbers I rolled was",number,"and your guess was",guess,"- better luck next time!")
     print("\nGAME OVER: Thanks for playing!")
     
 ###TEST###
