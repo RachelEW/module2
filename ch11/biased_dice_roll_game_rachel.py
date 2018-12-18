@@ -32,32 +32,25 @@ If you ever want to end the game just write 'quit'.""")
         gamesCount += 1
 #main game
         number = rollingTwoDice()
-        print("Original Number:",number)
+#        print("Original Number:",number)
 ##################Printing Counts###################
-        print("\nOdd: ",oddCount)
-        print("Even: ",evenCount)
-        print("Number of Games: ",gamesCount)
+#        print("\nOdd: ",oddCount)
+#        print("Even: ",evenCount)
+#        print("Number of Games: ",gamesCount)
 ####################################################
         if oddCount > 5 or evenCount > 5:
             if guess == "odd":
                 oddBias = biasResultodd(oddCount, gamesCount, number)
                 if oddBias:
-                    print("Bias against Odd")
+#                    print("Bias against Odd")
                     number = biasDiceRollOdd(number)
-                    print("New number:",number)
-                else:
-                    print("no odd bias")
+#                    print("New number:",number)
             elif guess == "even":
                     evenBias = biasResulteven(evenCount, gamesCount, number)
                     if evenBias:
-                        print("Bias against even")
+#                        print("Bias against even")
                         number = biasDiceRollEven(number)
-                        print("New number:",number)
-                    else:
-                        print("No even bias")
-            else:
-                continue
-        
+#                        print("New number:",number)
         if number % 2 == 0 and guess == "even":
             print("\nCorrect! The sum of the numbers I rolled was",number,"which is even.")
         elif number % 2 != 0 and guess == "odd":
