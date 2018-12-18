@@ -14,7 +14,7 @@ from random import randint
 def playGame():
     print("""Welcome to The Dice Game.
 I will roll two dice and add the numbers together.
-You must guess whether the sum of the numbers I roll will be odd or an even!
+You must guess whether the sum of the numbers I roll will be odd or even!
 If you ever want to end the game just write 'quit'.""")
     guess = 0
     oddCount = 0
@@ -59,7 +59,7 @@ If you ever want to end the game just write 'quit'.""")
             print("\nYou have choosen to exit the game.")
             break
         else:
-            print("\nIncorrect, the sum of the numbers I rolled was",number,"and your guess was",guess,". Better luck next time!")
+            print("\nIncorrect, the sum of the numbers I rolled was",number,"and your guess was",guess,"- better luck next time!")
 #counts
             
     print("\nGAME OVER: Thanks for playing!")
@@ -71,15 +71,15 @@ def rollingTwoDice():
     return number
     
 def biasResultodd(oddCount, gamesCount, number):
-        likelyodd = oddCount / gamesCount
-        if likelyodd >= 0.70:
+        frequencyodd = oddCount / gamesCount
+        if frequencyodd >= 0.70:
             return True
         else:
             return False
 
 def biasResulteven(evenCount, gamesCount, number):
-    likelyeven = evenCount / gamesCount
-    if likelyeven >= 0.70:
+    frequencyeven = evenCount / gamesCount
+    if frequencyeven >= 0.70:
         return True
     else:
         return False
