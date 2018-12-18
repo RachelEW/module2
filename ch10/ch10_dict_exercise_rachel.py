@@ -5,9 +5,11 @@ Created on Mon Dec 17 10:16:48 2018
 @author: winkl
 """
 
-#############################################
-"""Creating a Dictionary with User Input"""
-#############################################
+#########################################################
+"""Creating a Dictionary with User Input
+
+A Dictionary which allows you to add 4 students to it"""
+#########################################################
 
 def addKey_phoneBook_dict():
     name_key = input("What name would you like to add to the phone book? ")
@@ -23,18 +25,21 @@ def addItem_phoneBook_dict():
     values = [phoneNo, luckyNo, city, age, diffQueenAge]
     return values
     
-def continue_phoneBook_dict():
-    addItem = input("Would you like to add a person to the phone book? y/n ")[0]
-    if addItem == "y":
-        generate_phoneBook_dict(phoneBook_dict)
-    else:
-        print("Ok, your phone book is finished. Here is your finished phone book:")
+#def continue_phoneBook_dict():
+#    addItem = input("Would you like to add a person to the phone book? y/n ")[0]
+#    if addItem == "y":
+#        generate_phoneBook_dict(phoneBook_dict)
+#    else:
+#        print("Ok, your phone book is finished. Here is your finished phone book:")
         
 def generate_phoneBook_dict(phoneBook_dict):
-    name_key = addKey_phoneBook_dict()
-    values = addItem_phoneBook_dict()
-    phoneBook_dict[name_key] = values
-    continue_phoneBook_dict()
+    counter = 0
+    while counter < 5:
+        counter += 1
+        name_key = addKey_phoneBook_dict()
+        values = addItem_phoneBook_dict()
+        phoneBook_dict[name_key] = values
+#        continue_phoneBook_dict()
     return phoneBook_dict
 
 ####Test#####
