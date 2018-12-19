@@ -13,6 +13,7 @@ Created on Thu Nov 29 13:54:55 2018
 """Task One and In Class Practice with User Input"""
 #---------------------------------------------------#
 
+#Another option for user input:
 #name = input("What's your name? ").title()
 #print ("Hello {}!".format(name.upper())) #The first option gives the input o the same line as the question
 
