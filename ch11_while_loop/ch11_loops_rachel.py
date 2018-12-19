@@ -5,9 +5,13 @@ Created on Tue Dec 18 09:22:45 2018
 @author: winkl
 """
 
-#############################
+######################
 """While Loops"""
-#############################
+######################
+
+#------------------------------#
+"""Task One: Repeat division"""
+#------------------------------#
 
 x = 33
 while x >= 1:
@@ -15,9 +19,9 @@ while x >= 1:
     x = x / 2
 print(x)
 
-#------------------#
-"""Exercise 1: Computing triangular numbers"""
-#------------------#
+#-------------------------------------------#
+"""Task Two: Computing triangular numbers"""
+#-------------------------------------------#
 
 def generateTriangularNo(n):
     triangularSum = 0
@@ -26,12 +30,12 @@ def generateTriangularNo(n):
         n = n-1
     return(triangularSum)
     
-triangularSum1 = generateTriangularNo(4)
-print(triangularSum1)
+#triangularSum1 = generateTriangularNo(4)
+#print(triangularSum1)
 
-#-----------------#
-"""Exercise 2: Determining if a student has passed or failed"""
-#-----------------#
+#--------------------------------------------------------------#
+"""Task Three: Determining if a student has passed or failed"""
+#--------------------------------------------------------------#
 def generateGrade():
     counter = 0
     mark = 0
@@ -52,9 +56,9 @@ def generateGrade():
 ###TEST###
 #generateGrade()
 
-#----------------------#
-"""Using a break statement to exit a while loop"""
-#----------------------#
+#------------------------------------------------------------#
+"""Task Four: Using a break statement to exit a while loop"""
+#------------------------------------------------------------#
 
 i = 55
 while i > 10:
@@ -63,9 +67,9 @@ while i > 10:
     if i == 35.2:
         break
 
-#---------------------#
-"""Exercise 3: Greeting until user is done"""
-#---------------------#
+#-----------------------------------------------------#
+"""Additional Exercise: Greeting until user is done"""
+#-----------------------------------------------------#
 
 def greet():
     name = input("What is your name? ")
@@ -88,4 +92,34 @@ def greet2():
         print("Hello", name)
         
 ###TEST###
-greet2()
+#greet2()
+        
+#----------------------------------------------#
+"""Task Five and Six: Design a Guessing Game"""
+#----------------------------------------------#
+
+from random import randint
+
+def guess(attempts, amount):
+    number = randint(1, amount)
+    print("Welcome! Can you guess the secret number?")
+    while attempts > 0:
+        print("You have ", attempts, " guesses remaining. The number is between 0 and", amount,".")
+        guess = input("Make a guess: ")
+        guess = int(guess)
+        if guess == number:
+            print("Well done! Your guess was correct!")
+            break
+        elif guess > number:
+            print("Too high!")
+        else:
+            print("Too low!")
+        attempts -= 1
+    if attempts == 0:
+        print("You have no guesses remaining, the secret number was", number,"better luck next time!")
+        print("GAME-OVER: Thank you for playing!")
+    else:
+        print("GAME-OVER: Thank you for playing!")
+
+###TEST###
+guess(4,25)
