@@ -1,51 +1,105 @@
-## -*- coding: utf-8 -*-
-#"""
-#Created on Mon Dec  3 09:43:32 2018
-#
-#@author: winkl
-#"""
-#
-def hello_world_2args(a, b):
-    print ("{} {}".format(a,b))
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Nov 29 13:54:55 2018
+
+@author: 612383461
+"""
+
+#####################
+"""Functions"""
+#####################
+
+#---------------------------------------------------#
+"""Task One and In Class Practice with User Input"""
+#---------------------------------------------------#
+
+#name = input("What's your name? ").title()
+#print ("Hello {}!".format(name.upper())) #The first option gives the input o the same line as the question
+
+def conversing_with_user():
+    print ("What's your name?")
+    name = input()
+    print ("Hello {}!".format((name).upper())) #The second option gives a space between the question and where you type
+    print ("Where are you from?")
+    hometown = input()
+    print ("Oooh, I loved {} when I visited!".format((hometown).title()))
+    print ("How old are you?")
+    age = input()
+    print ("{} is a great age, {}!".format(age, (name.title())))
+    print ("What colour are your socks?")
+    socks = input().title()
+    print ("{}, I like your sense of style, {}.".format(socks,name))
+
+#----------------------------------#
+"""Task Two: Creating Functions"""
+#----------------------------------#
+
+def hello_world():
+    print ("Hello World!")
     
-a1 = 'hello'
-b1 = 'world'
-a2 = 'love'
-b2 = 'coding'
-#hello_world_2args(a1, b1)
-#hello_world_2args(a2, b2)
+def my_name():
+    print ("Rachel Winkler")
+    print (2+2)
 
-def hello_world_4args(a, b, c, d):
-    print ("{} {} {} {}".format(a,b,c,d))
+#--------------------------------------------#
+"""Task Three: Using Range with Arguments"""
+#--------------------------------------------#
 
-a3 = "Dogs"
-b3 = "are"
-c3 = "the"
-d3 = "best!"
+def printing_list_using_range():
+    print (list(range (10)))
+    print (list(range (1,10)))
+    print (list(range (1,10,2))) #third value is the step size
 
-#hello_world_4args(a3, b3, c3, d3)
+#-------------------------------------------------------------------#
+"""In Class Practice: Calling a Function within another Function"""
+#-------------------------------------------------------------------#
 
-def hello_world_3args(a, b, c,):
-    print (a, b, c)
+def write_name():
+    print ("What is your name?")
+    name = input().title()
+    print ("Your name is {}".format(name))
     
-a4 = "Dogs"
-b4 = "are"
-c4 = "great"
+def hello_world2():
+    print ("Hello World!")
+    write_name()
+    
+def adding_numbers():
+    print ("Choose a number")
+    number_one = input()
+    print ("Choose a second number")
+    number_two = input()
+    result = float(number_one)+float(number_two)
+    print ("The sum of the numbers you choose is {}.".format(result))
 
-#hello_world_3args(a4, b4, c4)
+def hello_world3():
+     print ("Hello World!")
+     write_name()
+     adding_numbers()
 
-#print (list(range (10)))
-#print (list(range (1,10)))
-#print (list(range (1,10,2))) #third value is the step size
+#----------------------------------------------------------#
+"""Task Three Continued: Adding Numbers using Arguments"""
+#----------------------------------------------------------#
 
 def add_two_numbers_from_args(number1, number2): #These can only be variable names
     answer = number1 + number2
     print ("{} plus {} is {}".format(number1, number2, answer)) #variables are then defined outside the function
 
-num1 = 5
-num2 = 10
+#-------------------------------------------------#
+"""In Class Practice: Functions with arguements"""
+#-------------------------------------------------#
 
-#add_two_numbers_from_args(num1,num2) #inside the brackets tell the function which variables you are calling
+def hello_world_2args(a, b):
+    print ("{} {}".format(a,b))
+
+def hello_world_4args(a, b, c, d):
+    print ("{} {} {} {}".format(a,b,c,d))
+
+def hello_world_3args(a, b, c,):
+    print (a, b, c)
+
+#----------------------------------------------#
+"""Mid-Class Challenge: Distance Conversion"""
+#----------------------------------------------#
 
 def convert_distance_print(miles):
     kilometers = (miles * 8.0) / 5.0
@@ -53,15 +107,15 @@ def convert_distance_print(miles):
     print ("Distance in miles:", miles)
     print ("Distance in kilometers:", kilometers)
     
+#Returning the value insead of printing
+    
 def convert_distance(miles):
     kilometers = (miles * 8.0) / 5.0
     return miles, kilometers
-
-#returned_value1 = convert_distance(35)
-#print (returned_value1, "\n")
-
-
-#inside the brackets tell the function which variables you are calling
+    
+#---------------------------------------#
+"""Task Four: Temperature Conversion"""
+#---------------------------------------#
 
 def convert_temperature_print(centigrade):
     fahrenheit = centigrade * 9.0 / 5.0 + 32
@@ -79,6 +133,13 @@ def convert_temperature(centigrade):
 #to print a returned value, assign a variable to a value and then we can do things with this variable such as print it
 #returned_value2 = convert_temperature(20)
 #print (returned_value2)
+    
+#--------------------------------#
+"""Task Five: Return Value"""
+#--------------------------------#
 
-#temp_London = convert_temperature(12)
-#print (temp_London)
+def add_two_numbers_and_return_value():
+    number1 = 1
+    number2 = 2
+    answer = number1 + number2
+    return answer
