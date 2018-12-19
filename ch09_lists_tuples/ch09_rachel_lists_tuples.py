@@ -42,21 +42,20 @@ print(x)
 x.append('again') #append only applies to lists
 print(x)
 
-
-x = ['the', 'cat', 'sat']
+w = ['the', 'cat', 'sat']
 y = ['on', 'the', 'mat']
-z = x + y
+z = w + y
 print(z)
 print(z*3)
 
 #Using Set
 #Changes a list into a dictionary and removes repeated items.
-a = set(x + y)
+a = set(w + y)
 print(a)
 
-#-------------------------------#
-"""Task Three: Slicing a List"""
-#-------------------------------#
+#------------------------------#
+"""Task Three: Slicing Lists"""
+#------------------------------#
 
 x = ['this', 'and', 'that', 'once', 'again']
 
@@ -66,41 +65,39 @@ print(x[-2:3])
 print(z)
 print(z[3:10])
 
-####################
-"""Sorting Lists"""
-####################
+#---------------------------#
+"""Tasks 4: Sorting Lists"""
+#---------------------------#
 
 x = [7, 11, 2, 9, 2]
 
 y = sorted(x) #creates a new list, assign to a new variable
 print(y)
+print(x)
 
 x.sort() #sorts the exiting list
 print(x)
 
 x = ['ab', 'cs', 'yw', 'zs', 'hd']
 y = sorted(x)
-print(y) #sorts by the first letter fo the string
+print(y) #sorts by the first letter of the string
 x.sort()
 print(x)
 
-###########################
+#-------------------------#
 """Reverse Sorting Lists"""
-###########################
+#-------------------------#
 
 x = [7, 11, 2, 9, 2]
-y = sorted(x,reverse=True)
+y = sorted(x,reverse=True) #creates a new list
 print(y)
 
-x.sort(reverse=True)
+x.sort(reverse=True) #sorts the existing list
 print(x)
 
 x = ['ab', 'cs', 'yw', 'zs', 'hd']
 y = sorted(x,reverse=True)
 print(y)
-
-x.sort(reverse=True)
-print(x)
 
 x.sort(reverse=True)
 print(x)
@@ -109,21 +106,34 @@ print(x)
 """Tuples"""
 ##################
 
+#tuples are immutable (they can't be changed)
+
+#-------------------------------#
+"""Comparing lists and tuples"""
+#-------------------------------#
+
+#List Example
 a = [0,1,2,3,4,5,6,7,8,9] #list
 del a[-1]
 a[0] = 50 #adds a list element at the specified place in the list
 a.append('z')
 
+#Tuple Example
 b = (0,1,2,3,4,5,6,7,8,9) #Tuple
-#del b[-1] #Tuple does't support item deletion #means people can't edit your lists
-#b[0] = 50 #Tuple deos not support this
+#del b[-1] #Tuples do not support item deletion #means people can't edit your lists
+#b[0] = 50 #Tuples do not support this
 #b.append('z') #cannot use append on a Tuple
 
-##############
+#################
 """Lambada"""
-##############
+#################
+
+#----------------------------------------#
+"""Task 6: Using lambda to sort a list"""
+#----------------------------------------#
 
 #use lambda functions when we require a nameless function for a short period of time.
+#used for more complicated sorts
 
 a = [50, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 x = ['aa', 'zs', 'cs', 'hd', 'ab']
@@ -137,9 +147,14 @@ print(x2)
 print("\n")
 
 print(sorted(x2, key=lambda s:s[2][1])) #x2 is a variable, in the function is replaces 's', sorts by the second item (looks at the item which is in position [1])
-#sorted(x2, ky=lamba variablePlaceHolder:variablePlaceHolder[1])
 
-#Example(Iza)
+#---Syntax---#
+#sorted(x2, key=lamba variablePlaceHolder:variablePlaceHolder[1])
+
+#---------------------#
+"""Another Example"""
+#---------------------#
+
 #this list includes 3 tuples. each contains a string, a number and a variable
 x2 = [('Kate', 3, z), ('Joanna', 1, y), ('Betty', 5, x)]
 
@@ -148,4 +163,4 @@ print (x2)
 print()
 print("------print(sorted(x2, key=lambda s:s[1]))------")
 print(sorted(x2, key=lambda s:s[1]))
-#this is organized by what is at the first position in the tuple - number in this case
+#this is organized by what is at the first position in the tuple - in this case the number
