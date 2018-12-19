@@ -42,7 +42,7 @@ number = input("Enter a number between 1 and 10: ")
 number = int(number) #converts the input string into an integer
 if number > 10:
     print ("Too high!")    
-if number <= 0:
+elif number <= 0:
     print ("Too low!")  
 else:
     print ("Just right!")
