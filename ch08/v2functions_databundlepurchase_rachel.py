@@ -5,6 +5,10 @@ Created on Tue Dec 11 13:53:49 2018
 @author: 612383461
 """
 
+#####################################################################################
+"""Step Two: Using IF ELSE to choose options: Mobile Data Bundle Purchase Program"""
+#####################################################################################
+
 def DataBundlePurchase(truePasscode, balance):
     if passwordCheck(truePasscode): #means if it is True
         if checkBalance(balance):

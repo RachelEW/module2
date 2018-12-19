@@ -5,7 +5,16 @@ Created on Tue Dec 11 13:53:49 2018
 @author: 612383461
 """
 
-def DataBundlePurchase(truePasscode, balance, phoneNumber):
+#####################################################
+"""Creating a Mobile Data Bundle Purchase Program"""
+#####################################################
+
+#-----------------------------------------------------#
+"""Use of subfunctions to make code cleaner
+Adding three password attempts"""
+#-----------------------------------------------------#
+
+def DataBundlePurchase(truePasscode, balance):
     if passwordCheck(truePasscode): #means if it is True
         if checkBalance(balance):
             transactionType = chooseTransaction()
@@ -29,7 +38,7 @@ def DataBundlePurchase(truePasscode, balance, phoneNumber):
     else:
         return 'You have entered your password incorrectly three times. Please reset your password.'
     
-#Conducting password checks
+#---Conducting password checks---#
 def passwordCheck(truePasscode):
     attempt = input('Please enter your password ')
     if attempt == truePasscode:
@@ -61,14 +70,14 @@ You have 1 attempt left.''')
     else:
         return False
 
-#Checking Balance
+#---Checking Balance---#
 def checkBalance(balance):
     if balance > 0:
         return True
     else:
         return False
 
-#Choosing Transation
+#---Choosing Transation---#
 def chooseTransaction():
     print('''\nWhat would you like to do next?
 \nPlease choose a number from the following options:
@@ -77,7 +86,7 @@ def chooseTransaction():
     transactionType = input()
     return transactionType
 
-#Supplying phone number for purchases
+#---Supplying phone number for purchases---#
 def choosingPhoneNumber():
     phoneNo = inputPhoneNumber()
     lengthPhoneNo = checkLengthPhoneNumber(phoneNo)
@@ -109,7 +118,7 @@ def validatePhoneNumber(phoneNo):
     else:
         return False
 
-#Purchasing a data bundle
+#---Purchasing a data bundle---#
 def purchaseDataBundle(balance):
     purchaseAmount = checkDataBundlePurchaseAmount(balance)
     if (balance - purchaseAmount) >= 0:

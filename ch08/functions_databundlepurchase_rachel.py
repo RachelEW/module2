@@ -5,6 +5,10 @@ Created on Tue Dec 11 13:53:49 2018
 @author: 612383461
 """
 
+##################################################################################
+"""Initial Funcitions for Creating a Simple Mobile Data Bundle Purchase Program"""
+##################################################################################
+
 def DataBundlePurchase(truePasscode, balance):
     if passwordCheck(truePasscode): #means if it is True
         return 'Password OK'

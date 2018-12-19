@@ -10,7 +10,7 @@ from v4functions_databundlepurchase_rachel import DataBundlePurchase
 #Test call to programme:
 print ('TEST EXAMPLE 1')
 #database input, you will still need to check user pin
-result = DataBundlePurchase('1234', 30.55, '071234567')
+result = DataBundlePurchase('1234', 30.55,)
 print ('-----\nResult:', result)
 print ('-' * 50, '\n')
 
