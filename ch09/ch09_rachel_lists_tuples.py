@@ -11,9 +11,12 @@ Created on Thu Dec 13 09:28:27 2018
 
 #lists are mutable (they can be changed)
 
-my_favourite_fruits = ['apple', 'orange', 'banana']
+#-------------------------------------------------#
+"""Task One: Creating and Using index in a List"""
+#-------------------------------------------------#
 
-x = ['this', 55, 'that', my_favourite_fruits] #list can contain mix type of data
+my_favourite_fruits = ['apple', 'orange', 'banana']
+x = ['this', 55, 'that', my_favourite_fruits] #lists can contain a mix of data types
 
 #print(x[0])
 #print(x[1])
@@ -23,13 +26,20 @@ x = ['this', 55, 'that', my_favourite_fruits] #list can contain mix type of data
 #print(x[-1][-3]) #first position goes into the item my_favourite_fruits, the second number relates to an item within that
 #print(x[-2][-3]) #first no. picks the item, second no. selects the letter within that string
 
+#----------------------------#
+"""Task Two: Modify a List"""
+#----------------------------#
+
+#deleting an item in a list
 x.remove(my_favourite_fruits) #remove only applies to lists
 print(x)
 
-x[1] = 'and' #update list item value by using indew of the item in the current list
+#updating (replacing) a list item value by using the indew of the item in the current list
+x[1] = 'and'
 print(x)
 
-x.append('again') #append only applies to list, adds item to the end of the list
+#adding an item to the end of a list
+x.append('again') #append only applies to lists
 print(x)
 
 
@@ -38,11 +48,23 @@ y = ['on', 'the', 'mat']
 z = x + y
 print(z)
 print(z*3)
-a = set(x + y) #Changes a list into a dictionary and removes repeated items.
+
+#Using Set
+#Changes a list into a dictionary and removes repeated items.
+a = set(x + y)
 print(a)
 
+#-------------------------------#
+"""Task Three: Slicing a List"""
+#-------------------------------#
+
 x = ['this', 'and', 'that', 'once', 'again']
+
+print(x[1:4]) #includes items in positions 1-3, does not include 4
 print(x[-2:3])
+
+print(z)
+print(z[3:10])
 
 ####################
 """Sorting Lists"""
