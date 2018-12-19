@@ -6,53 +6,58 @@ Created on Wed Dec  5 10:08:33 2018
 """
 import sys
 
-########################
+##################################
+"""Object Oriented Programming"""
+##################################
+
+#-----------------------#
 """Task One: Classes"""
-########################
+#-----------------------#
 
-#class Customer(object):
-#    """A customer of ABC Bank with a checking account. Customers have the following properties:
-#        Attributes:
-#            name: A string representing the customer's name.
-#            balanca: A float tracking the current balance of the customer's account. """
-#            
-#    def __init__(self, name, balance=0.0):
-#        """Return a Customre object whose name is *name* and starting balance is *balance*."""
-#        self.name = name
-#        self.balance = balance
-#        
-#    def withdraw(self, amount):
-#        """Return the balance remaining after withdrawing *amount* dollars. """
-#        if amount > self.balance:
-#            raise RuntimeError('Amount greater than available balance.')
-#        self.balance -= amount
-#        return self.balance
-#
-##can write this as an else statement for self.balance but this isn't neccessary
-#        
-#    def deposit(self, amount):
-#        """Return the balance remaining after depositing *amount* dollars."""
-#        self.balance += amount
-#        return self.balance
-#    
-## self is how the object refers to itself
-#        #when you call __init__ method you never call init, you call it through the class (in this case Customer) then give the variables the equivalent values
-#    
-##Define a Customer by naming the Customer and defining the values of name and balance
-##we can create as many custommrs as we want but there is only one customer class by whch customers are defined.
-#        
-#sarah = Customer('Sarah Smith', 1250)
-#print(sarah.balance)
-#print(sarah.name)
-#sarah.withdraw(50)
-##sarah is an object so you can call any function by writing .function() for the functions which are deifned for this type of object only
-#sarah.withdraw(2000)
-#sarah.deposit(25)
-#sarah.deposit(1000)
+class Customer(object):
+    """A customer of ABC Bank with a checking account. Customers have the following properties:
+        Attributes:
+            name: A string representing the customer's name.
+            balanca: A float tracking the current balance of the customer's account. """
+            
+    def __init__(self, name, balance=0.0):
+        """Return a Customre object whose name is *name* and starting balance is *balance*."""
+        self.name = name
+        self.balance = balance
+        
+    def withdraw(self, amount):
+        """Return the balance remaining after withdrawing *amount* dollars. """
+        if amount > self.balance:
+            raise RuntimeError('Amount greater than available balance.')
+        self.balance -= amount
+        return self.balance
 
-############################
-"""Task Two: Inheritance"""
-############################
+#can write this as an else statement for self.balance but this isn't neccessary
+        
+    def deposit(self, amount):
+        """Return the balance remaining after depositing *amount* dollars."""
+        self.balance += amount
+        return self.balance
+    
+# self is how the object refers to itself
+        #when you call __init__ method you never call init, you call it through the class (in this case Customer) then give the variables the equivalent values
+    
+#Define a Customer by naming the Customer and defining the values of name and balance
+#we can create as many custommrs as we want but there is only one customer class by whch customers are defined.
+
+###TESTING###        
+sarah = Customer('Sarah Smith', 1250)
+print(sarah.balance)
+print(sarah.name)
+sarah.withdraw(50)
+#sarah is an object so you can call any function by writing .function() for the functions which are deifned for this type of object only
+sarah.withdraw(2000)
+sarah.deposit(25)
+sarah.deposit(1000)
+
+#--------------------------------------------------------#
+"""Task Two: Inheritance (Extended Task with Practice)"""
+#--------------------------------------------------------#
 
 class Animal(object):
     def __init__(self, name, age=0):
@@ -125,19 +130,20 @@ class Horse(FarmAnimal):
     def whinny(self):
         print('neigh')
         
+###TESTING###        
 #skye = Dog('Skye', 2, 0)
 #skye.bark()
 #skye.eat()
 #skye.do_trick()
 
-spider = Cat('Spider', 10)
+#spider = Cat('Spider', 10)
 #spider.meow()
 #spider.eat()
 #spider_jump_on_human()
 
-################################
-"""Task Two: Second Example"""
-################################
+#-----------------------------------------------------------#
+"""Task Three: Second Example Using Classes and Inheritance"""
+#-----------------------------------------------------------#
 
 class Robot():
     def __init__(self, name='robot', speciality='none', age=0):
@@ -160,10 +166,12 @@ class DessertCook(CookRobot):
     def bake(self):
         print('I baked cookies')
 
-######################################       
-"""Task Association: Composition"""
-######################################
-        
+#-----------------------------------------#      
+"""Task Four: Association - Composition"""
+#-----------------------------------------#
+
+###---This uses the Robot and Animal classes from Tasks Two and Three---### 
+       
 class SuperRobot():
     def __init__(self, name, age):
         self.name = name
@@ -181,12 +189,14 @@ class SuperRobot():
         return self.o2.do_trick() #using dog class method
     def clean(self):
         return self.o3.clean() #using cleanrobot method
-    
+
+###---Using Python through the Command Line---###
 name = sys.argv[1]
 age = sys.argv[2]
 print(name)
 print(age)
 
+###TESTING###
 machineDog = SuperRobot(name, age)
 machineDog.move()
 machineDog.bark()
