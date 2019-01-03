@@ -9,7 +9,7 @@ from moving_shapes_functions import *
 
 frame = Frame()
 
-numshapes = 3
+numshapes = 2
 shapes = []
 
 for i in range(numshapes):
