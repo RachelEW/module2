@@ -1,0 +1,95 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Dec 24 16:52:33 2018
+
+@author: winkl
+"""
+
+####################
+"""Shapes Project"""
+####################
+
+from Shapes import *
+from pylab import random as r
+
+class MovingShape():
+    def __init__(self, frame, shape, diameter, x=0, y=0, dx=0, dy=0):
+        self.shape = shape
+        self.diameter = diameter
+        self.figure = Shape(shape, diameter)
+        self.frame = frame
+        self.x = x
+        self.y = y
+        self.dx = dx
+        self.dy = dy
+        self.x = self.defineStartX()
+        self.y = self.defineStartY()
+        self.moveSpeedX()
+        self.moveSpeedY()
+        
+    def goto(self, x, y):
+        self.figure.goto(x, y)
+        
+    def moveTick(self):
+        self.x = self.x + self.dx
+        self.y = self.y + self.dy
+        self.goto(self.x, self.y)
+        
+    def moveSpeedX(self):
+        self.dx = 5 + 10 * r()
+        if r() > 0.5:
+            self.dx = 0 - self.dx
+        return self.dx
+        
+    def moveSpeedY(self):
+        self.dy = 5 + 10 * r()
+        if r() > 0.5:
+            self.dy = 0 - self.dy
+        return self.dy 
+        
+class Square(MovingShape):
+    def __init__(self, frame, diameter):
+        MovingShape.__init__(self, frame, 'square', diameter)
+        
+    def defineMinX(self):
+        self.minx = self.diameter / 2
+        return self.minx
+    
+    def defineMaxX(self):
+        d2 = self.diameter / 2
+#        self.frame.width = Frame(width)
+        self.maxx = self.frame.width - d2
+        return self.maxx
+    
+    def defineMinY(self):
+        self.miny = self.diameter / 2
+        return self.minx
+    
+    def defineMaxY(self):
+        d2 = self.diameter / 2
+#        frame.height = Frame(height)
+        self.maxy = self.frame.height - d2
+        return self.maxy
+     
+    def defineStartX(self):
+        self.defineMinX()
+        self.defineMaxX()
+        self.x = self.minx + r() * (self.maxx - self.minx)
+        return self.x
+    
+    def defineStartY(self):
+        self.defineMinY()
+        self.defineMaxY()
+        self.y = self.miny + r() * (self.maxy - self.miny)
+        return self.y
+    
+class Diamond(MovingShape):
+    def __init__(self, frame, diameter):
+        MovingShape.__init__(self, frame, 'diamond', diameter)
+    
+class Circle(MovingShape):
+    def __init__(self, frame, diameter):
+        MovingShape.__init__(self, frame, 'cirle', diameter)
+        
+
+    
