@@ -42,9 +42,15 @@ class Person:
             self.greetingFormal()
 
 class Wizard(Person):
+    def __init__(self, name, age, gender):
+        Person.__init__(self, name, age, 'm')
+        
     def greetingFormal(self):
         print('Welcome, Mr ', self.name, end=' ')
         print('- you\'re a fine wizard!')
+        
+    def spell(self):
+        print('Expelliarmus!')
 
 ###TESTING###
 p1 = Person('John', 62, 'm')
@@ -57,3 +63,4 @@ p2.greetingAgeBased()
 
 p3 = Wizard('Harry', 12, 'm')
 p3.greetingFormal()
+p3.spell()

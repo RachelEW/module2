@@ -13,30 +13,22 @@ from Shapes import *
 from pylab import random as r
 
 class MovingShape():
-    def __init__(self, frame, shape, diameter, x=0, y=0, dx=0, dy=0, minx=0, maxx=0, miny=0, maxy=0):
+    def __init__(self, frame, shape, diameter, x=0, y=0, dx=0, dy=0, minx=0, minxy=0, maxx=0, maxy=0):
         self.shape = shape
         self.diameter = diameter
         self.figure = Shape(shape, diameter)
         self.frame = frame
-#        self.x = x
-#        self.y = y
-#        self.dx = dx
-#        self.dy = dy
         self.x = self.defineStartX()
         self.y = self.defineStartY()
         self.dx = self.moveSpeedX()
         self.dy = self.moveSpeedY()
-#        self.minx = self.defineMinX()
-#        self.maxx = self.defineMaxX()
-#        self.miny = self.defineMinY()
-#        self.maxy = self.defineMaxY()
         
     def goto(self, x, y):
         self.figure.goto(x, y)
         
     def moveTick(self):
         self.x = self.x + self.dx
-        self.y = self.y + self.dy
+        self.y = self.y + self.dy 
         self.goto(self.x, self.y)
         self.checkEdgeXAxis()
         self.checkEdgeYAxis()
@@ -109,29 +101,55 @@ class Diamond(MovingShape):
     def __init__(self, frame, diameter):
         MovingShape.__init__(self, frame, 'diamond', diameter)
 
-###---Set minimum and maximum (x,y) coordinates---###
+###---Set minimum and maximum (x,y) coordinates for Diamond---###
     def defineMinX(self):
-        d3 = 2 * self.diameter
-        self.minx = d3 / 2
+        a1 = self.diameter**2 + self.diameter**2
+        a2 = a1**0.5
+        self.minx = a2 / 2
         return self.minx
     
     def defineMaxX(self):
-        d3 = 2 * self.diameter
-        d2 = d3 / 2
-        self.maxx = self.frame.width - d2
+        a1 = self.diameter**2 + self.diameter**2
+        a2 = a1**0.5
+        a3 = a2 / 2
+        self.maxx = self.frame.width - a3
         return self.maxx
     
     def defineMinY(self):
-        d3 = 2 * self.diameter
-        self.miny = d3 / 2
+        a1 = self.diameter**2 + self.diameter**2
+        a2 = a1**0.5
+        self.miny = a2 / 2
         return self.miny
     
     def defineMaxY(self):
-        d3 = 2 * self.diameter
-        d2 = d3 / 2
-        self.maxy = self.frame.height - d2
+        a1 = self.diameter**2 + self.diameter**2
+        a2 = a1**0.5
+        a3 = a2 / 2
+        self.maxy = self.frame.height - a3
         return self.maxy
-    
+        
+#    def defineMinX(self):    
+#        d3 = 2 * self.diameter
+#        self.minx = d3 / 2
+#        return self.minx
+#    
+#    def defineMaxX(self):
+#        d3 = 2 * self.diameter
+#        d2 = d3 / 2
+#        self.maxx = self.frame.width - d2
+#        return self.maxx
+#    
+#    def defineMinY(self):
+#        d3 = 2 * self.diameter
+#        self.miny = d3 / 2
+#        return self.miny
+#    
+#    def defineMaxY(self):
+#        d3 = 2 * self.diameter
+#        d2 = d3 / 2
+#        self.maxy = self.frame.height - d2
+#        return self.maxy
+#    
 class Circle(MovingShape):
     def __init__(self, frame, diameter):
         MovingShape.__init__(self, frame, 'circle', diameter)
