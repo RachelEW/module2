@@ -128,28 +128,6 @@ class Diamond(MovingShape):
         self.maxy = self.frame.height - a3
         return self.maxy
         
-#    def defineMinX(self):    
-#        d3 = 2 * self.diameter
-#        self.minx = d3 / 2
-#        return self.minx
-#    
-#    def defineMaxX(self):
-#        d3 = 2 * self.diameter
-#        d2 = d3 / 2
-#        self.maxx = self.frame.width - d2
-#        return self.maxx
-#    
-#    def defineMinY(self):
-#        d3 = 2 * self.diameter
-#        self.miny = d3 / 2
-#        return self.miny
-#    
-#    def defineMaxY(self):
-#        d3 = 2 * self.diameter
-#        d2 = d3 / 2
-#        self.maxy = self.frame.height - d2
-#        return self.maxy
-#    
 class Circle(MovingShape):
     def __init__(self, frame, diameter):
         MovingShape.__init__(self, frame, 'circle', diameter)
