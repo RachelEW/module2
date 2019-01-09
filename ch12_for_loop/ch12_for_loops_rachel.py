@@ -17,9 +17,9 @@ my_shopping_cart = ["cake", "plates", "plastic forks", "juice", "cups"]
 for item in my_shopping_cart:
     print(item)
     
-#---------------------------------#
-"""Task Two: another for loop"""
-#---------------------------------#
+#--------------------------------------------------------#
+"""Task Two: Another For Loop and Updating List Values"""
+#--------------------------------------------------------#
     
 values = [85, 23, 451]
 for val in values:
@@ -28,37 +28,37 @@ for val in values:
 for val in values:
     print('---->'+str(val+50))
     
-#Converting a string into a list using split (indicates where to split the sentence)
+#---Converting a string into a list using split (indicates where to split the sentence)---#
 for char in 'Hello, my name is Rachel'.split(' '):
     print(char)
 
-#-------------------------------------#
-"""Task Three: Creating a for loop"""
-#-------------------------------------#
+#-------------------------------------------------#
+"""Task Three: Creating a For Loop and Printing"""
+#-------------------------------------------------#
 
 values = ['this', 55, 'that']
 for thing in values:
     print('***', thing)
     
-#---------------------------#
-"""Task Four"""
-#---------------------------#
+#------------------------------------------------#
+"""Task Four: Loop through a string data type"""
+#------------------------------------------------#
 
 for char in "Yes":
     print(char)
     
 #-----------------------------------#
-"""Task Five: for loop with tuple"""
+"""Task Five: Loop thoruh a Tuple"""
 #-----------------------------------#
 
 shopping_list2 = ("soap", "shampoo", "conditioner", "toothpaste", "toothbrush")
 for bathroom_item in shopping_list2:
     print('--', bathroom_item)
     
-#-----------------------------------#
-"""Task Six: Using a dictionary
+#-------------------------------------#
+"""Task Six: Loop through a dictionary
 COME BACK TO THIS!!!"""
-#-----------------------------------#
+#-------------------------------------#
 
 salary = {'al': 20000, 'bo': 50000, 'ced': 1500}
 person = list(salary.keys())
@@ -67,9 +67,9 @@ print()
 
 ###---Using Dicitonary from ch10---###
 
-#----------------------------------#
-"""Task Seven: Another dicionary"""
-#----------------------------------#
+#-----------------------------------------------------#
+"""Task Seven: Example - Loop throught a dictionary"""
+#-----------------------------------------------------#
 
 #type of metal:density, stock price
 metals = {'iron': (7, 23), 'gold': (19.3, 30), 'zinc': (7.13, 18), 'lead': (11.4, 19)}
@@ -86,9 +86,9 @@ print(metals_keys)
 sorted_metalDensity = sorted(metals.items(), key=lambda kv:kv[1])
 print(sorted_metalDensity)
 
-###------------###
-"""Option One"""
-###------------###
+###-----------------------###
+"""Task Seven: Option One"""
+###-----------------------###
 
 #printing printing based on the first value(metal) using for loop
 for abc in sorted_metalDensity:
@@ -99,9 +99,9 @@ for abc in sorted_metalDensity:
 for abc in sorted_metalDensity:
     print(abc[0], 'has a density of', abc[1][0]) #select items within the list and tuple
 
-###------------###
-"""Option Two"""
-###------------###
+###-----------------------###
+"""Task Seven: Option Two"""
+###-----------------------###
 
 print('\nHere\'s a list of the metals and their stock price')
 for k, v in sorted_metalDensity:
@@ -119,18 +119,18 @@ for k, v in sorted_metalDensity:
 #for metal in sorted_metalDensity:
 #    print('{0:>8} = {1:5.1f}'.format(sorted_metalDensity[0], sorted_metalDensity[1]))
 
-#---------------------------------------------------------#
+#--------------------------------------------------------------#
 """Task Eight: using IF ELSE to search for a particular value"""
-#---------------------------------------------------------#
+#--------------------------------------------------------------#
 
 print('\nMetals with a density over 8:')
 for abc in sorted_metalDensity:
     if abc[1][0] > 8:
         print(abc[0], 'has a density of', abc[1][0])
     
-#-----------------------------------------------------------------#
+#----------------------------------------------------------------------#
 """Task Nine: Computing the sum of values in a list using a for loop"""
-#-----------------------------------------------------------------#
+#----------------------------------------------------------------------#
     
 valuesList = [3, 12, 9]
 
@@ -143,9 +143,9 @@ for value in valuesList:
 print('OVERALL TOTAL: ' + str(total))
 
 
-#----------------------#
-"""Task Ten: Index"""
-#----------------------#
+#---------------------------------------------#
+"""Task Ten: Using a Loop with Index Values"""
+#---------------------------------------------#
 
 values = [3, 12, 9]
 for index in range(len(values)):
