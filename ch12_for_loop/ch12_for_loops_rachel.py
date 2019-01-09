@@ -48,7 +48,7 @@ for char in "Yes":
     print(char)
     
 #-----------------------------------#
-"""Task Five: Loop thoruh a Tuple"""
+"""Task Five: Loop through a Tuple"""
 #-----------------------------------#
 
 shopping_list2 = ("soap", "shampoo", "conditioner", "toothpaste", "toothbrush")
@@ -65,6 +65,11 @@ person = list(salary.keys())
 print(person)
 print()
 
+sorted_salaries = sorted(salary.items(), key=lambda kv:kv[0])
+
+for item in sorted_salaries:
+    print(item[0], 'has a salary of', item[1])
+
 ###---Using Dicitonary from ch10---###
 
 #-----------------------------------------------------#
@@ -72,18 +77,18 @@ print()
 #-----------------------------------------------------#
 
 #type of metal:density, stock price
-metals = {'iron': (7, 23), 'gold': (19.3, 30), 'zinc': (7.13, 18), 'lead': (11.4, 19)}
+metal_values = {'iron': (7, 23), 'gold': (19.3, 30), 'zinc': (7.13, 18), 'lead': (11.4, 19)}
 
 #converting metal key values into a list
-metals_keys = list(metals.keys())
+metals_keys = list(metal_values.keys())
 print(metals_keys)
 
 #sort using sort() in reverse value order
-metals_keys.sort(reverse = True, key=lambda k:metals[k])
+metals_keys.sort(reverse = True, key=lambda k:metal_values[k])
 print(metals_keys)
 
 #sorted key:value pair
-sorted_metalDensity = sorted(metals.items(), key=lambda kv:kv[1])
+sorted_metalDensity = sorted(metal_values.items(), key=lambda kv:kv[1])
 print(sorted_metalDensity)
 
 ###-----------------------###
@@ -109,15 +114,15 @@ for k, v in sorted_metalDensity:
 #for item, metalValue in metal_density:
 #    print(metal, metalValue[1])
 
-"""COME BACK TO THIS!!!!!!!!!"""
-#for metal in metals:
-#    if metals[metal] [0]>8:
-#        print('{0:>8} = {1:5.1f}'.format(metal, sorted_metalDensity[1][0]))
+###---Another Example---"""
+
+#type of metal:density
+metal_values = {'iron': 7, 'gold': 19.3, 'zinc': 7.13, 'lead': 11.4}
+for metal in metals_keys:
+#    if metals_keys[metal] [0]>8:
+        print('{0:>8} = {1:5.1f}'.format(metal, metal_values[metal]))
 #.1f give float to the precision of 1 decimal place
 #In {1:5} the second number sets the alignment the item it is formatting. > means right-align text in the field
-
-#for metal in sorted_metalDensity:
-#    print('{0:>8} = {1:5.1f}'.format(sorted_metalDensity[0], sorted_metalDensity[1]))
 
 #--------------------------------------------------------------#
 """Task Eight: using IF ELSE to search for a particular value"""
@@ -156,15 +161,15 @@ for index in range(len(values)):
     print(values[index] )
 
 
-#--------------------------#
-"""Task Eleven: step size"""
-#--------------------------#
+#-------------------------------------------------------#
+"""Task Eleven: Using a loop with the range functions"""
+#-------------------------------------------------------#
 
 for i in list(range(3, 10, 2)):
     print(i)
     
 #---------------------------------------------------#
-"""Task 12: Breaking a list above a certain value"""
+"""Task Twelve: Breaking a list above a certain value"""
 #---------------------------------------------------#
     
 scan_list = [1, 5, 30, 200, 101, 100, 22]
