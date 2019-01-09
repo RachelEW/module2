@@ -118,8 +118,10 @@ for k, v in sorted_metalDensity:
 
 #type of metal:density
 metal_values = {'iron': 7, 'gold': 19.3, 'zinc': 7.13, 'lead': 11.4}
-for metal in metals_keys:
-#    if metals_keys[metal] [0]>8:
+metal_list = list(metal_values.keys())
+
+for metal in metal_list:
+    if metal_values[metal]>8:
         print('{0:>8} = {1:5.1f}'.format(metal, metal_values[metal]))
 #.1f give float to the precision of 1 decimal place
 #In {1:5} the second number sets the alignment the item it is formatting. > means right-align text in the field
