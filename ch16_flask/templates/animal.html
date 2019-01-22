@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+  <title>Your Favourite Animal</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  {% if animal %}
+  <p>
+    The animal you want to learn more about is a {{animal}}. Here are some facts about a {{animal}}s:
+  </p>
+  {% else %}
+  <p>
+    Your favourite animal is not known!
+  </p>
+  {% endif %}
+
+</body>
+
+</html>

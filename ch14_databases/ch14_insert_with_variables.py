@@ -55,7 +55,7 @@ def dynamic_data_entry():
 
 
 #-----------------------------------------------------------------#
-"""Task Three: Reading and selecting data from a databas (p151)"""
+"""Task Three: Reading and selecting data from a database (p151)"""
 #-----------------------------------------------------------------#
 
 def read_from_db_all():

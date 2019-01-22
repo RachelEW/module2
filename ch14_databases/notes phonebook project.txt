@@ -1,0 +1,7 @@
+can't change column name easily.
+
+third table will be api with geolocation information.
+
+search how to read excel spreasheets using python - can import rows from this.
+
+for security reasons you would put VALUES(?, ?, ?, ?) - ? as placeholder so that there is only one thing input for each value.

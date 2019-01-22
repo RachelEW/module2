@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+  <title>{{title}} Flask Experiment</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/screen.css') }}">
+</head>
+
+<body>
+
+  <h1>Flask Experiment</h1>
+<a href="index">Welcome Page</a>
+{% block content %} {% endblock %}
+</body>
+</html>
